@@ -13,6 +13,13 @@ app.get("/",function(req,res) {
 
 // rota sobre
 app.get("/sobre",function(req,res) {
+        let dadosQuery= req.query["dadosQuery"]; //usuario passa parametros---> ?dadosQuery=<aqui parametros>
+        
+        if(dadosQuery){
+         res.send(`<h1>O usuario passou o sequinte parametro--> ${dadosQuery}`)       
+        }else{
+         res.send("Não passou parametros pelo dadosQuery")       
+        }
         res.send("<h1>sobre</h1>");  //resposta da rota
 });
 
